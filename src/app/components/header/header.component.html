@@ -1,0 +1,40 @@
+<header class="header">
+  <div>
+    <button class="menu-btn" mat-button [matMenuTriggerFor]="menu">
+      <mat-icon>
+        <i class="menu-icon">
+          menu
+        </i>
+      </mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+  </div>
+  <div class="logo-wrapper">
+    <a class="logo-link" routerLink="/teams"><img class="logo-img" src="{{imgUrl}}"><span class="logo">Stats</span></a>
+  </div>
+  <div class="slide-wrapper" [formGroup]="groupControl">
+    <div>
+      <mat-card class="result" style="box-shadow: none">
+        <mat-card-content>
+          <mat-slide-toggle
+            class="example-margin"
+            formControlName="toggle"
+            [color]="color"
+            [checked]="groupControl.controls.toggle.value">
+            Teams
+          </mat-slide-toggle>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="favorite-posts">
+      <button mat-fab color="warn">
+        <mat-icon><i class="material-icons">
+          favorite
+        </i></mat-icon>
+      </button>
+    </div>
+  </div>
+</header>

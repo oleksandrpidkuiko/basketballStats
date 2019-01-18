@@ -1,0 +1,9 @@
+<section class="player-list">
+  <ul class="player-ul" >
+    <li *ngFor="let player of playersList">
+      <app-players-card
+      [player]="player">
+      </app-players-card>
+    </li>
+  </ul>
+</section>

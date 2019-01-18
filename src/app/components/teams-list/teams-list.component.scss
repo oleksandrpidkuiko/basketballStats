@@ -1,0 +1,15 @@
+.team-list {
+  padding: 75px;
+  background: black;
+}
+
+.teams-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  li {
+    margin: 20px;
+  }
+}

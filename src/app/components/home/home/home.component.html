@@ -1,0 +1,7 @@
+<div class="home">
+  <app-teams-list *ngIf="status; else playersView"></app-teams-list>
+</div>
+
+<ng-template #playersView>
+<app-players-list></app-players-list>
+</ng-template>
