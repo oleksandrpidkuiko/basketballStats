@@ -1,9 +1,11 @@
 <section class="player-list">
   <ul class="player-ul" >
-    <li *ngFor="let player of playersList">
+    <li *ngFor="let player of activePageData">
       <app-players-card
       [player]="player">
       </app-players-card>
     </li>
   </ul>
+  <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="onPageChanged($event)">
+  </mat-paginator>
 </section>

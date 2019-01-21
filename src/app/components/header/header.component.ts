@@ -3,6 +3,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 import {TeamsDataService} from '../../teams-data.service';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/internal/operators';
+import {StatusService} from '../../status.service';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +17,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   private destroy$ = new Subject();
 
-  constructor(private dataService: TeamsDataService) {
+  constructor(private statusService: StatusService) {
   }
 
   ngOnInit() {
@@ -27,7 +28,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.groupControl.valueChanges
       .pipe(takeUntil(this.destroy$))
       .subscribe((status) => {
-        this.dataService.toggleStatus$.next(status.toggle);
+        this.statusService.toggleStatus$.next(status.toggle);
       });
   }
 

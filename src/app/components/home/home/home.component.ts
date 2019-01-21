@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {TeamsDataService} from '../../../teams-data.service';
+import {StatusService} from '../../../status.service';
 
 @Component({
   selector: 'app-home',
@@ -9,12 +9,11 @@ import {TeamsDataService} from '../../../teams-data.service';
 export class HomeComponent implements OnInit {
   status: boolean;
 
-  constructor(private dataService: TeamsDataService) { }
+  constructor(private statusService: StatusService) { }
 
   ngOnInit() {
-    this.dataService.toggleStatus$.subscribe((status) => {
+    this.statusService.toggleStatus$.subscribe((status) => {
       this.status = status;
-      console.log(status);
     });
   }
 

@@ -1,12 +1,22 @@
-<div>
+<div class="players-card-example">
   <mat-card class="example-card">
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shi  a2.jpg" alt="SomeImage">
+    <img mat-card-image class="player-photo" (error)="onError()" src={{player.img}} alt="SomeImage">
     <mat-card-content>
       <h2>
         {{player.name}}
       </h2>
       <p>
-        The some info about team.
+        Team: {{player.team_name}} ({{player.team_acronym}})
+        <br>
+        Games played: {{player.games_played}}
+        <br>
+        Minutes per game: {{player.minutes_per_game}}
+        <br>
+        Points per game: {{player.points_per_game}}
+        <br>
+        Assists per game: {{player.assists_per_game}}
+        <br>
+        Player efficiency rating: {{player.player_efficiency_rating}}
       </p>
     </mat-card-content>
     <mat-card-actions class="make-favorite-btn">

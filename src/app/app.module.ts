@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {
-  MatSlideToggleModule, MatButtonModule, MatIconRegistry, MatIconModule, MatInputModule, MatCardModule, MatMenuModule
+  MatSlideToggleModule, MatButtonModule, MatIconRegistry, MatIconModule, MatInputModule, MatCardModule, MatMenuModule, MatPaginatorModule
 } from '@angular/material';
 import { TeamsListComponent } from './components/teams-list/teams-list.component';
 import {HttpClientModule} from '@angular/common/http';
@@ -41,6 +41,7 @@ import {PlayersDataService} from './players-data.service';
     HttpClientModule,
     MatCardModule,
     ReactiveFormsModule,
+    MatPaginatorModule
   ],
   providers: [MatIconRegistry, TeamsDataService, PlayersDataService],
   bootstrap: [AppComponent]
