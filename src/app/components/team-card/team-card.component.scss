@@ -6,3 +6,29 @@
 .favorite {
   font-style: inherit;
 }
+
+.team-card {
+  min-width: 270px;
+  max-width: 270px;
+}
+
+.acronym {
+  text-align: center;
+}
+
+.team-img {
+  margin: 0 auto;
+  max-width: 200px;
+  max-height: 165px;
+  min-width: 200px;
+  min-height: 165px;
+  display: table-cell;
+}
+
+.team-name {
+  text-align: center;
+}
+
+.detail {
+  color: cornflowerblue;
+}

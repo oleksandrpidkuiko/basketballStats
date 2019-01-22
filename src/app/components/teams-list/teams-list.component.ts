@@ -8,12 +8,12 @@ import {Teams} from '../../teams';
   styleUrls: ['./teams-list.component.scss']
 })
 export class TeamsListComponent implements OnInit {
-  teamsList;
+  teamsList = [];
 
   constructor(private teamsService: TeamsDataService) { }
 
   ngOnInit() {
-    this.teamsService.getTeams().subscribe((data: Teams) => {
+    this.teamsService.getTeams().subscribe((data) => {
       this.teamsList = data;
     });
   }

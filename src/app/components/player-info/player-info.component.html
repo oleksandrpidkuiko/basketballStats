@@ -1,0 +1,34 @@
+<section class="player-info">
+  <div class="players-card">
+    <mat-card class="example-card">
+      <img mat-card-image class="player-photo" src={{player?.img}} alt="SomeImage">
+      <mat-card-content>
+        <h2>
+          {{player?.name}}
+        </h2>
+        <p>
+          Team: {{player?.team_name}} ({{player?.team_acronym}})
+          <br>
+          Games played: {{player?.games_played}}
+          <br>
+          Minutes per game: {{player?.minutes_per_game}}
+          <br>
+          Points per game: {{player?.points_per_game}}
+          <br>
+          Assists per game: {{player?.assists_per_game}}
+          <br>
+          Player efficiency rating: {{player?.player_efficiency_rating}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions class="make-favorite-btn">
+        <button mat-icon-button color="warn">
+          <mat-icon>
+            <i class="favorite">
+              favorite
+            </i>
+          </mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</section>

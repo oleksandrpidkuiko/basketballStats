@@ -1,15 +1,19 @@
-<div>
+<div class="team-card">
   <mat-card class="example-card">
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shi  a2.jpg" alt="SomeImage">
+    <img mat-card-image class="team-img" src={{team.img}} alt="SomeImage">
     <mat-card-content>
-      <h2>
-        {{team}}
+      <h2 class="team-name">
+        {{team.name}}
       </h2>
+      <h3 class="acronym">
+        {{team.acronym}}
+      </h3>
       <p>
         The some info about team.
       </p>
     </mat-card-content>
     <mat-card-actions class="make-favorite-btn">
+      <button mat-button class="detail" routerLink="/line-up/{{team.acronym}}">Detail</button>
       <button mat-icon-button color="warn">
         <mat-icon>
           <i class="favorite">
