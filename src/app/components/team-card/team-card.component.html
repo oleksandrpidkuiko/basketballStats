@@ -14,7 +14,7 @@
     </mat-card-content>
     <mat-card-actions class="make-favorite-btn">
       <button mat-button class="detail" routerLink="/line-up/{{team.acronym}}">Detail</button>
-      <button mat-icon-button color="warn">
+      <button mat-icon-button (click)="addToFavorite(team)" color="warn">
         <mat-icon>
           <i class="favorite">
             favorite

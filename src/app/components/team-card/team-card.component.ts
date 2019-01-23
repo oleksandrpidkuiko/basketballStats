@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {FavoriteTeamService} from '../../favorite-team.service';
 
 @Component({
   selector: 'app-team-card',
@@ -8,9 +9,13 @@ import {Component, Input, OnInit} from '@angular/core';
 export class TeamCardComponent implements OnInit {
   @Input() team;
 
-  constructor() { }
+  constructor( private favoriteTeamService: FavoriteTeamService) { }
 
   ngOnInit() {
+  }
+
+  addToFavorite(team) {
+    this.favoriteTeamService.addTeamCard(team);
   }
 
 }

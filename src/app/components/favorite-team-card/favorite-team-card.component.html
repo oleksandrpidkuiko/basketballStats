@@ -1,0 +1,9 @@
+<section class="favorite-team">
+  <ul class="teams-ul" >
+    <li *ngFor="let team of favoriteTeamList">
+      <app-team-card
+        [team]="team">
+      </app-team-card>
+    </li>
+  </ul>
+</section>

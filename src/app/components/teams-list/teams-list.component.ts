@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {TeamsDataService} from '../../teams-data.service';
-import {Teams} from '../../teams';
+import {finalize} from 'rxjs/internal/operators';
 
 @Component({
   selector: 'app-teams-list',
@@ -8,13 +8,20 @@ import {Teams} from '../../teams';
   styleUrls: ['./teams-list.component.scss']
 })
 export class TeamsListComponent implements OnInit {
+  isLoading = false;
   teamsList = [];
 
   constructor(private teamsService: TeamsDataService) { }
 
   ngOnInit() {
-    this.teamsService.getTeams().subscribe((data) => {
+    this.isLoading = true;
+    this.teamsService.getTeams()
+      .pipe(finalize(() => {
+        this.isLoading = false;
+      }))
+      .subscribe((data) => {
       this.teamsList = data;
+      this.teamsService.hideLoader();
     });
   }
 

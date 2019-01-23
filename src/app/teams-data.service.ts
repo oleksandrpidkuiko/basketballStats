@@ -16,9 +16,10 @@ export class TeamsDataService {
   constructor(private httpClient: HttpClient) { }
 
   getTeams() {
+    this.showLoader();
     return this.httpClient.get(TEAMS_URL.teamsUrl)
       .pipe(
-        map((data) => {
+        map(data => {
           this.buf = data;
           this.buf.map( (acronym, index) => {
             this.teamsList.push(
@@ -30,5 +31,11 @@ export class TeamsDataService {
           });
           return this.teamsList;
         }));
+  }
+  showLoader (): void {
+    console.log ('Показать загрузчик');
+  }
+  hideLoader (): void {
+    console.log('Cкрыть загрузчик');
   }
 }

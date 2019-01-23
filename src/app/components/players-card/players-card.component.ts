@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {PlayersDataService} from '../../players-data.service';
+import {FavoritePlayerService} from '../../favorite-player.service';
 
 @Component({
   selector: 'app-players-card',
@@ -11,9 +12,13 @@ export class PlayersCardComponent implements OnInit {
 
   defaultAvatar = '../../../assets/image/empty.jpg';
 
-  constructor() { }
+  constructor(private favoritePlayerService: FavoritePlayerService) { }
 
   ngOnInit() {
+  }
+
+  addToFavorite(player) {
+    this.favoritePlayerService.addPlayerCard(player);
   }
 
   onError() {
