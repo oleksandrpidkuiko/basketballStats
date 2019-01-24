@@ -21,7 +21,6 @@ export class TeamsListComponent implements OnInit {
       }))
       .subscribe((data) => {
       this.teamsList = data;
-      this.teamsService.hideLoader();
     });
   }
 

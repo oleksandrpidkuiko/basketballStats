@@ -1,5 +1,5 @@
 <section class="team-list">
-  <img *ngIf="isLoading" src='../../../assets/preloader.svg' alt="">
+  <img class="loader-overlay preloader" src='../../../assets/preloader.svg' *ngIf="isLoading" alt="">
   <ul class="teams-ul" >
     <li *ngFor="let team of teamsList">
       <app-team-card

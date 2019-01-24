@@ -7,7 +7,7 @@ import {HeaderComponent} from './components/header/header.component';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MatSlideToggleModule, MatButtonModule, MatIconRegistry, MatIconModule, MatInputModule, MatCardModule, MatMenuModule, MatPaginatorModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule, MatProgressBarModule
 } from '@angular/material';
 import {TeamsListComponent} from './components/teams-list/teams-list.component';
 import {HttpClientModule} from '@angular/common/http';
@@ -25,6 +25,7 @@ import {FavoriteTeamService} from './favorite-team.service';
 import { FavoritePlayerCardComponent } from './components/favorite-player-card/favorite-player-card.component';
 import {FavoritePlayerService} from './favorite-player.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,7 @@ import {FavoritePlayerService} from './favorite-player.service';
     PlayerInfoComponent,
     PlayersListComponent,
     FavoriteTeamCardComponent,
-    FavoritePlayerCardComponent
+    FavoritePlayerCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,14 +53,15 @@ import {FavoritePlayerService} from './favorite-player.service';
     MatMenuModule,
     MatPaginatorModule,
     HttpClientModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatProgressBarModule
   ],
   providers: [
     MatIconRegistry,
     TeamsDataService,
     PlayersDataService,
     FavoriteTeamService,
-    FavoritePlayerService
+    FavoritePlayerService,
   ],
   bootstrap: [AppComponent]
 })
