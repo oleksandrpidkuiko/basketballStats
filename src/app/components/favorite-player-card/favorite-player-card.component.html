@@ -1,7 +1,9 @@
-<ul class="player-ul" >
-  <li *ngFor="let player of favoritePlayerList">
-    <app-players-card
-      [player]="player">
-    </app-players-card>
-  </li>
-</ul>
+<section class="favorite-player-cards">
+  <ul class="player-ul" >
+    <li *ngFor="let player of favoritePlayerList">
+      <app-players-card
+        [player]="player">
+      </app-players-card>
+    </li>
+  </ul>
+</section>

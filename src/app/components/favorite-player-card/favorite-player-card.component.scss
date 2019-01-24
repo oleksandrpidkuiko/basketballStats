@@ -1,0 +1,15 @@
+.player-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  li {
+    margin: 20px;
+  }
+}
+
+.favorite-player-cards {
+  background: black;
+  padding: 50px;
+}
