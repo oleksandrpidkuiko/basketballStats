@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FavoriteTeamService} from '../../favorite-team.service';
+import {FavoriteTeamService} from './favorite-team.service';
+import { Team } from '../teams-list/team.model';
 
 @Component({
   selector: 'app-favorite-team-card',
@@ -7,7 +8,7 @@ import {FavoriteTeamService} from '../../favorite-team.service';
   styleUrls: ['./favorite-team-card.component.scss']
 })
 export class FavoriteTeamCardComponent implements OnInit {
-  favoriteTeamList = [];
+  public favoriteTeamList: Team[];
 
   constructor(private  favoriteTeamService: FavoriteTeamService) { }
 

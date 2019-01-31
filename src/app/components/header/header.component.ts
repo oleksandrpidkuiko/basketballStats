@@ -1,6 +1,6 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
-import {TeamsDataService} from '../../teams-data.service';
+import {TeamsDataService} from '../teams-list/teams-data.service';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/internal/operators';
 import {StatusService} from '../../status.service';
@@ -8,12 +8,10 @@ import {StatusService} from '../../status.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-  groupControl: FormGroup;
-  color = 'warn';
-
+  public groupControl: FormGroup;
   private destroy$ = new Subject();
 
   constructor(private statusService: StatusService) {

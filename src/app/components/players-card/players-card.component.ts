@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import {PlayersDataService} from '../../players-data.service';
+import { Component, OnInit, Input, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit } from '@angular/core';
 import {FavoritePlayerService} from '../../favorite-player.service';
 
 @Component({
@@ -7,21 +6,18 @@ import {FavoritePlayerService} from '../../favorite-player.service';
   templateUrl: './players-card.component.html',
   styleUrls: ['./players-card.component.scss']
 })
-export class PlayersCardComponent implements OnInit {
+export class PlayersCardComponent {
   @Input() player;
 
-  defaultAvatar = '../../../assets/image/empty.jpg';
+  public defaultAvatar = '../../../assets/image/empty.jpg';
 
   constructor(private favoritePlayerService: FavoritePlayerService) { }
 
-  ngOnInit() {
-  }
-
-  addToFavorite(player) {
+  public addToFavorite(player): void {
     this.favoritePlayerService.addPlayerCard(player);
   }
 
-  onError() {
+  public onError(): void {
     this.player.img = this.defaultAvatar;
   }
 

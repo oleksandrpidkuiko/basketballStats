@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FavoritePlayerService} from '../../favorite-player.service';
+import { IPlayer } from '../../player.model';
 
 @Component({
   selector: 'app-favorite-player-card',
@@ -7,7 +8,7 @@ import {FavoritePlayerService} from '../../favorite-player.service';
   styleUrls: ['./favorite-player-card.component.scss']
 })
 export class FavoritePlayerCardComponent implements OnInit {
-  favoritePlayerList = [];
+  public favoritePlayerList: IPlayer[];
 
   constructor(private favoritePlayerService: FavoritePlayerService) { }
 

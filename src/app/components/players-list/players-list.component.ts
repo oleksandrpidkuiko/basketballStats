@@ -1,7 +1,8 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {IPlayer, PlayersDataService} from '../../players-data.service';
+import {PlayersDataService} from '../../players-data.service';
 import {PageEvent} from '@angular/material';
 import {finalize, map} from 'rxjs/internal/operators';
+import { IPlayer } from '../../player.model';
 
 @Component({
   selector: 'app-players-list',
@@ -31,7 +32,8 @@ export class PlayersListComponent implements OnInit {
       this.isLoading = false;
     }))
       .subscribe(data => {
-      this.playersList = data;
+        console.log(data);
+        this.playersList = data;
       this.length = this.playersList.length;
       this.activePageData = this.playersList.slice(0, this.pageSize);
       });

@@ -1,35 +1,38 @@
 import { Injectable } from '@angular/core';
+import { IPlayer } from './player.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FavoritePlayerService {
-  data = [];
+  public favoritePlayers: IPlayer[] = [];
   constructor() { }
 
-  addPlayerCard(card) {
-    let countElemOfData = 0;
-    if (localStorage.getItem('player-cards')) {
-      this.data = JSON.parse(localStorage.getItem('player-cards'));
-      this.data.map((item) => {
+  public addPlayerCard(card): void {
+    let checkedPlayersCounter = 0;
 
-        if (item.name !== card.name) {
-          countElemOfData++;
+    if (localStorage.getItem('player-cards')) {
+      this.favoritePlayers = JSON.parse(localStorage.getItem('player-cards'));
+      this.favoritePlayers.map(({name}) => {
+
+        if (name !== card.name) {
+          checkedPlayersCounter++;
         }
-        if (countElemOfData === this.data.length) {
-          this.data.push(card);
+        if (checkedPlayersCounter === this.favoritePlayers.length) {
+          this.favoritePlayers.push(card);
         }
       });
-      localStorage.setItem('player-cards', JSON.stringify(this.data));
+      localStorage.setItem('player-cards', JSON.stringify(this.favoritePlayers));
 
     } else {
-      this.data.push(card);
-      localStorage.setItem('player-cards', JSON.stringify(this.data));
+      this.favoritePlayers.push(card);
+      localStorage.setItem('player-cards', JSON.stringify(this.favoritePlayers));
     }
   }
 
-  getPlayerCards() {
-    const data = JSON.parse(localStorage.getItem('player-cards'));
-    return data;
+  public getPlayerCards(): IPlayer[] {
+    const player = JSON.parse(localStorage.getItem('player-cards'));
+
+    return player;
   }
 }

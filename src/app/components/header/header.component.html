@@ -1,4 +1,6 @@
 <header class="header">
+ <!-- <ng-template #akaaka>Ky-</ng-template>
+  <ng-container *ngTemplateOutlet="akaaka"></ng-container>-->
   <div>
     <button class="menu-btn" mat-button [matMenuTriggerFor]="menu">
       <mat-icon>
@@ -22,7 +24,7 @@
           <mat-slide-toggle
             class="example-margin"
             formControlName="toggle"
-            [color]="color"
+            [color]=warn
             [checked]="groupControl.controls.toggle.value">
             Teams
           </mat-slide-toggle>

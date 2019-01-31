@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {TeamsDataService} from '../../teams-data.service';
+import {TeamsDataService} from './teams-data.service';
 import {finalize} from 'rxjs/internal/operators';
+import { Team } from './team.model';
 
 @Component({
   selector: 'app-teams-list',
@@ -8,8 +9,8 @@ import {finalize} from 'rxjs/internal/operators';
   styleUrls: ['./teams-list.component.scss']
 })
 export class TeamsListComponent implements OnInit {
-  isLoading = false;
-  teamsList = [];
+  public isLoading = false;
+  public teamsList: Team[];
 
   constructor(private teamsService: TeamsDataService) { }
 
@@ -23,5 +24,4 @@ export class TeamsListComponent implements OnInit {
       this.teamsList = data;
     });
   }
-
 }

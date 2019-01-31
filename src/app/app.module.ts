@@ -11,7 +11,7 @@ import {
 } from '@angular/material';
 import {TeamsListComponent} from './components/teams-list/teams-list.component';
 import {HttpClientModule} from '@angular/common/http';
-import {TeamsDataService} from './teams-data.service';
+import {TeamsDataService} from './components/teams-list/teams-data.service';
 import {TeamCardComponent} from './components/team-card/team-card.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HomeComponent} from './components/home/home/home.component';
@@ -21,7 +21,7 @@ import {LineUpListComponent} from './components/line-up-list/line-up-list.compon
 import {PlayerInfoComponent} from './components/player-info/player-info.component';
 import {PlayersListComponent} from './components/players-list/players-list.component';
 import {FavoriteTeamCardComponent} from './components/favorite-team-card/favorite-team-card.component';
-import {FavoriteTeamService} from './favorite-team.service';
+import {FavoriteTeamService} from './components/favorite-team-card/favorite-team.service';
 import { FavoritePlayerCardComponent } from './components/favorite-player-card/favorite-player-card.component';
 import {FavoritePlayerService} from './favorite-player.service';
 
@@ -58,9 +58,7 @@ import {FavoritePlayerService} from './favorite-player.service';
   ],
   providers: [
     MatIconRegistry,
-    TeamsDataService,
     PlayersDataService,
-    FavoriteTeamService,
     FavoritePlayerService,
   ],
   bootstrap: [AppComponent]
